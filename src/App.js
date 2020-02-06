@@ -8,11 +8,20 @@ import BranchList from './components/BranchList/BranchList';
 import BranchPage from './components/BranchPage/BranchPage';
 
 function App() {
-	const [branchList, setBranchList] = useState([]);
+	const [branchList, setBranchList] = useState({});
 
 	useEffect(() => {
 		axiosBranch.get('').then(result => {
-			setBranchList(branchList => result.data.branches);
+			let district_dict = {};
+			result.data.branches.forEach(branch => {
+				if(!district_dict.hasOwnProperty(branch.district)) {
+					district_dict[`${branch.district}`] = [];
+				}
+
+				district_dict[`${branch.district}`].push(branch);
+			});
+
+			setBranchList(branchList => district_dict);
 		}).catch(error => {
 			console.log(error);
 		});
