@@ -1,0 +1,14 @@
+@import "../../variables";
+
+.Layout {
+    max-width: 120rem;
+    margin: 8rem auto;
+    background-color: $color-grey-light-2;
+    box-shadow: $shadow-dark;
+    min-height: 50rem;
+
+    &__Main {
+        min-height: 100vh;
+        display: flex;
+    }
+}

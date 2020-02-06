@@ -1,0 +1,47 @@
+@import "../../variables";
+
+.Heading {
+    display: flex;
+    align-items: center;
+    font-size: $default-font-size;
+    min-height: 5rem;
+    border-bottom: 1px solid rgba($color-black, 0.1);
+
+    &__Title {
+        margin-right: auto;
+        padding: 1.2rem 2.4rem;
+        font-weight: 300;
+        font-size: 2.4rem;
+    }
+
+    &__City {
+        margin-right: 2rem;
+        font-size: 1.2rem;
+        padding-bottom: 2px;
+        color: $color-complement;
+        border-bottom: 1px solid $color-complement;
+        font-weight: 500;
+    }
+
+    &__Distance {
+        align-self: stretch;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-weight: 500;
+        font-size: 2.2rem;
+        padding: 0 1.5rem;
+        line-height: 1.2;
+        background-color: $color-complement;
+        color: $color-white;
+
+        &::after {
+            content: "away";
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            color: $color-white;
+            font-weight: 500;
+        }
+    }
+}

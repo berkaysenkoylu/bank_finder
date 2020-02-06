@@ -1,26 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import { Switch, Route } from 'react-router-dom';
+import axiosBranch from './axios-branch';
+
+import Layout from './hoc/Layout/Layout';
+import Home from './components/Home/Home';
+import BranchList from './components/BranchList/BranchList';
+import BranchPage from './components/BranchPage/BranchPage';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [branchList, setBranchList] = useState([]);
+
+	useEffect(() => {
+		axiosBranch.get('').then(result => {
+			setBranchList(branchList => result.data.branches);
+		}).catch(error => {
+			console.log(error);
+		});
+	}, []);
+
+	let routes = (
+		<Switch>
+			<Route exact path="/branches/:id" component={BranchPage} />
+			<Route exact path="/branches" render={() => <BranchList branches={branchList} />} />
+			<Route exact path="/" component={Home} />
+		</Switch>
+	);
+
+	return (
+		<Layout>
+			{routes}
+		</Layout>
+	);
 }
 
 export default App;
