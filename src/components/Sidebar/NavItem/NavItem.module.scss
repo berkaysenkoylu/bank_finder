@@ -1,0 +1,41 @@
+@import "../../../variables";
+
+.NavLink {
+    transition: all 0.2s ease-out;
+
+    &:link,
+    &:visited {
+        color: $color-white;
+        text-decoration: none;
+        font-size: 1.8rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1.5rem 3rem;
+        position: relative;
+        z-index: 100;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: $color-complement-dark-1;
+            height: 100%;
+            width: 3px;
+            transform-origin: 0 50%;
+            transform: scaleY(0);
+            z-index: -1;
+            transition: transform 0.3s ease-out, width 0.3s ease-out 0.3s;
+        }
+    }
+
+    &:hover::before {
+        width: 100%;
+        transform: scaleY(1);
+    }
+
+    &__Active {
+        background-color: $color-complement-dark-1;
+    }
+}

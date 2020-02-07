@@ -1,0 +1,22 @@
+@import "../../../../variables";
+
+.BranchItem {
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem;
+    cursor: pointer;
+    border-top: 1px solid rgba($color-black, 0.15);
+    padding: 1rem 0;
+
+    // &:not(:last-child) {
+    //     margin-bottom: 1rem;
+    // }
+
+    &__Icon {
+        margin-right: 2rem;
+    }
+
+    &:hover {
+        background-color: #ddd;
+    }
+}

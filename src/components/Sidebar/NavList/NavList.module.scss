@@ -1,0 +1,7 @@
+@import "../../../variables";
+
+.NavList {
+    font-size: $default-font-size;
+    display: flex;
+    flex-direction: column;
+}

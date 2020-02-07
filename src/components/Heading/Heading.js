@@ -13,10 +13,9 @@ const Heading = (props) => {
                 Ankara
             </span>
 
-            {/* put a flag here */}
-            <span className={classes.Heading__Distance}>
-                15 km
-            </span>
+            {props.showDistance ? <span className={classes.Heading__Distance}>
+                {props.distance ? (isFinite(props.distance) ? props.distance.toFixed(1) : 'N/A') : 'N/A'} km
+            </span> : null}
         </header>
     )
 }
