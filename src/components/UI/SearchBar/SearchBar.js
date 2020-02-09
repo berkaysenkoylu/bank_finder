@@ -42,7 +42,7 @@ const SearchBar = () => {
         setSearchValue(inp);
         setShowSearchResults(showSearchResults => inp.length > 0);
 
-        axiosBranch.get('').then(result => {
+        axiosBranch.get(`/search?incl=${event.target.value}`).then(result => {
             setSearchResults(result.data.branches);
         });
     }

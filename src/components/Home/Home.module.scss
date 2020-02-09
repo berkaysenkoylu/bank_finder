@@ -1,0 +1,28 @@
+@import "../../variables";
+
+.Home {
+    padding: 2rem;
+
+    &__Header {
+        text-align: center;
+        margin-bottom: 2rem;
+
+        h2 {
+            font-size: 3rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+        }
+    }
+
+    &__Description {
+        width: 80%;
+        margin: 0 auto;
+        font-size: $default-font-size;
+
+        p {
+            &:not(:last-child) {
+                margin-bottom: 2rem;
+            }
+        }
+    }
+}

@@ -11,13 +11,13 @@ const District = (props) => {
             <label htmlFor={`${props.name}-toggle`} className={classes.District__Name}>{props.name}</label>
 
             <ul className={classes.District__Branches}>
-                {props.branches.map(branch => {
+                { props.branches.map(branch => {
                     return <BranchItem 
                         key={branch._id}
                         code={branch.code}
                         name={branch.name}
                         address={branch.address}
-                        clicked={() => props.branchClicked(branch._id, branch.district)}
+                        clicked={() => props.branchClicked(branch._id)}
                     />
                 })}
             </ul>

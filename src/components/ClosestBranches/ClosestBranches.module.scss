@@ -1,9 +1,9 @@
 @import "../../variables";
 
-.BranchList {
+.ClosestBranches {
+    padding: 2rem;
 
     &__Header h2 {
-        margin: 2rem 0;
         text-align: center;
         letter-spacing: 2px;
         font-weight: 300;
@@ -12,12 +12,6 @@
 
     &__Slider {
         width: 50%;
-        margin: 4rem auto;
-    }
-
-    &__Districts {
-        padding: 3rem;
-        display: flex;
-        flex-direction: column;
+        margin: 4rem auto 0 auto;
     }
 }
