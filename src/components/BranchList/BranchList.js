@@ -17,7 +17,7 @@ const BranchList = (props) => {
             <Heading title="Türkiye İş Bankası Şubeleri" showDistance={false} />
 
             {branchList.length > 0 ? <div style={{padding: "3rem"}}>
-                <MapComponent branches={branchList} />
+                <MapComponent branches={branchList} zoom={12} />
             </div> : null}
 
             <div className={classes.BranchList__Districts}>

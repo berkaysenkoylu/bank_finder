@@ -1,5 +1,6 @@
 import React from 'react';
 
+import svg from '../../assets/images/sprites.svg'
 import classes from './Heading.module.scss';
 
 const Heading = (props) => {
@@ -10,7 +11,12 @@ const Heading = (props) => {
             </h2>
 
             <span className={classes.Heading__City}>
-                Ankara
+                <svg className={classes.Heading__City__Icon}>
+                    <use xlinkHref={`${svg}#icon-location`}></use>
+                </svg>
+                <span className={classes.Heading__City__Name}>
+                    Ankara
+                </span>
             </span>
 
             {props.showDistance ? <span className={classes.Heading__Distance}>

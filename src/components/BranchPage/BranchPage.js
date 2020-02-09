@@ -5,6 +5,7 @@ import useGetDistance from '../../hooks/useGetDistance';
 
 import Heading from '../Heading/Heading';
 import MapComponent from '../MapComponent/MapComponent';
+import BranchInfo from './BranchInfo/BranchInfo';
 
 const BranchPage = React.memo((props) => {
     const [branch, setBranch] = useState({});
@@ -26,8 +27,12 @@ const BranchPage = React.memo((props) => {
             <Heading title={branch.name} showDistance={true} distance={distance} />
             
             <div style={{padding: "2rem"}}>
-                <MapComponent branches={[branch]} />
+                <MapComponent branches={[branch]} zoom={12} />
             </div>
+
+            <BranchInfo 
+                {...branch}
+            />
         </section>
     )
 })

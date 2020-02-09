@@ -19,8 +19,20 @@
         font-size: 1.2rem;
         padding-bottom: 2px;
         color: $color-complement;
-        border-bottom: 1px solid $color-complement;
         font-weight: 500;
+        display: flex;
+        align-items: center;
+
+        &__Name {
+            border-bottom: 1px solid $color-complement;
+        }
+
+        &__Icon {
+            width: 1.5rem;
+            height: 1.5rem;
+            fill: $color-complement;
+            margin-right: 3px;
+        }
     }
 
     &__Distance {

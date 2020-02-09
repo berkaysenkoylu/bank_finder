@@ -4,4 +4,11 @@
     font-size: 1.4rem;
     height: 7rem;
     border-bottom: 1px solid $color-grey-light-2;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+
+    &__Icon {
+        margin-right: auto;
+    }
 }

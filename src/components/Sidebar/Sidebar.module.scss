@@ -3,4 +3,6 @@
 .Sidebar {
     flex: 0 0 20%;
     background-color: $color-complement;
+    display: flex;
+    flex-direction: column;
 }
