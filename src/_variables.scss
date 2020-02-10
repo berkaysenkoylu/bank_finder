@@ -28,3 +28,10 @@ $default-font-size: 1.6rem;
 
 // BOX SHADOW
 $shadow-dark: 0rem 1rem 1.6rem rgba(#000, 0.3);
+
+// BREAK POINTS
+$bp-largest: 75em; // 1200px / 16px = 75em
+$bp-large: 62.5em; // 1000px / 16px = 62.5em
+$bp-medium: 50em; // 800px / 16px = 50em
+$bp-small: 37.5em; // 600px / 16px = 37.5em
+$bp-xsmall: 28.125em; // 450px / 16px = 28.125em

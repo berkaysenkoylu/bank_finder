@@ -1,10 +1,11 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 
 import classes from './BranchList.module.scss';
 import Heading from '../Heading/Heading';
 import District from './District/District';
 import MapComponent from '../MapComponent/MapComponent';
 import RangeSlider from '../UI/RangeSlider/RangeSlider';
+import Spinner from '../UI/Spinner/Spinner';
 
 import useGetGeoLocation from '../../hooks/useGetGeoLocation';
 
@@ -12,9 +13,15 @@ const BranchList = React.memo((props) => {
     const [branches, setBranches] = useState([]);
     const coords = useGetGeoLocation();
 
+    const initBranches = useCallback(
+        () => {
+            setBranches(props.branches);
+        }, [props.branches],
+    );
+
     useEffect(() => {
-        setBranches(props.branches)
-    }, [props.branches]);
+        initBranches();
+    }, [initBranches]);
 
 
     let district_dict = useRef();
@@ -63,26 +70,39 @@ const BranchList = React.memo((props) => {
                 return null
             }
         });
+
         setBranches(closestBranches);
     }
+
+    let loadingSpinner = (
+        <div className={classes.LoadingContainer}>
+            <Spinner strokeWidth={3} />
+            <span className={classes.LoadingContainer__Text}>
+                Finding your location...
+            </span>
+        </div>
+    )
 
     return (
         <section className={classes.BranchList}>
             <Heading title="Türkiye İş Bankası Şubeleri" showDistance={false} />
 
-            <header className={classes.BranchList__Header}>
-                <h2>
-                    EN YAKIN ŞUBEYİ BUL
-                </h2>
-            </header>
+            { (coords.latitude && coords.longitude) ? <div>
+                <header className={classes.BranchList__Header}>
+                    <h2>
+                        EN YAKIN ŞUBEYİ BUL
+                    </h2>
+                </header>
 
-            <div className={classes.BranchList__Slider}>
-                <RangeSlider max={150} changed={onFindBetweenRangeHandler} />
-            </div>
+                <div className={classes.BranchList__Slider}>
+                    <RangeSlider max={150} changed={onFindBetweenRangeHandler} />
+                </div>
+            </div> : loadingSpinner}
 
             {branches.length > 0 ? <div style={{padding: "3rem"}}>
                 <MapComponent branches={branches} zoom={12} />
             </div> : null}
+            
 
             <div className={classes.BranchList__Districts}>
                 { districts.current.length > 0 ? districts.current.map((district, i) => {

@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const instance = axios.create({
-    baseURL: 'http://localhost:8000/api/branch'
+    baseURL: 'https://serene-garden-71605.herokuapp.com/api/branch'
 });
 
 export default instance;

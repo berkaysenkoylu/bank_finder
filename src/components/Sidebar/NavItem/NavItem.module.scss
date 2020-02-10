@@ -27,12 +27,25 @@
             transform: scaleY(0);
             z-index: -1;
             transition: transform 0.3s ease-out, width 0.3s ease-out 0.3s;
+
+            @media only screen and (max-width: $bp-medium) {
+                transition: transform 0.2s ease-out, height 0.3s ease-out 0.2s;
+                height: 3px;
+                width: 100%;
+                transform-origin: top;
+                transform: scaleX(0) scaleY(1);
+            }
         }
     }
 
     &:hover::before {
         width: 100%;
         transform: scaleY(1);
+
+        @media only screen and (max-width: $bp-medium) {
+            height: 100%;
+            transform: scaleX(1);
+        }
     }
 
     &__Active {

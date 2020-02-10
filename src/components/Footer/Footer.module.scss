@@ -6,4 +6,8 @@
     align-self: center;
     color: $color-white;
     font-size: $default-font-size;
+
+    @media only screen and (max-width: $bp-large) {
+        display: none;
+    }
 }

@@ -7,8 +7,16 @@
     box-shadow: $shadow-dark;
     min-height: 50rem;
 
+    @media only screen and (max-width: $bp-largest) {
+        margin: 0;
+    }
+
     &__Main {
         min-height: 100vh;
         display: flex;
+
+        @media only screen and (max-width: $bp-medium) {
+            flex-direction: column;
+        }
     }
 }

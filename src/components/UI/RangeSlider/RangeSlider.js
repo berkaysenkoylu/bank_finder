@@ -115,10 +115,6 @@ class RangeSlider extends Component {
     }
 
     onMouseUpHandler = (event) => {
-        // this.setState({
-        //     isMouseButtonDown: false
-        // });
-
         if(!this.state.dragStarted) {
             return;
         }
@@ -218,76 +214,3 @@ class RangeSlider extends Component {
 }
 
 export default RangeSlider;
-
-
-/*
-
-import React, { useEffect, useRef, useState } from 'react';
-
-import classes from './RangeSlider.module.scss';
-import Knob from './Knob/Knob';
-
-const RangeSlider = () => {
-    const [mouseButtonHoldDown, setMouseButtonHoldDown] = useState(false);
-    const [intervalId, setIntervalId] = useState(null);
-    const [posX, setPosX] = useState(0);
-
-    const sliderRef = useRef(null);
-
-    useEffect(() => {
-        document.addEventListener('mousedown', onMouseDownHandler);
-        document.addEventListener('mouseup', onMouseUpHandler);
-        document.addEventListener('mousemove', onMouseMoveHandler);
-
-        return () => {
-            document.removeEventListener('mousedown', onMouseDownHandler);
-            document.removeEventListener('mouseup', onMouseUpHandler);
-            document.removeEventListener('mousemove', onMouseMoveHandler);
-        };
-    }, []);
-
-    const onMouseDownHandler = (event) => {
-        if(event.target !== sliderRef.current) {
-            return;
-        }
-        setMouseButtonHoldDown(true);
-    }
-
-    const onMouseUpHandler = (event) => {
-        if(event.target !== sliderRef.current) {
-            return;
-        }
-
-        setMouseButtonHoldDown(false);
-    }
-
-    const onMouseMoveHandler = (event) => {
-        if(mouseButtonHoldDown) {
-            console.log("Hey listen")
-        }
-    }
-
-    const findPosition = (event) => {
-        let rect = sliderRef.current.getBoundingClientRect();
-        let rectWidth = Math.floor(rect.width);
-        let leftPosPercentage = ((event.pageX - rect.left) / rectWidth) * 100;
-
-        return leftPosPercentage;
-    }
-
-    const backFullStyle = {
-        left: '0%',
-        width: '100%'
-    }
-
-    return (
-        <div className={classes.RangeSlider}>
-            <div className={classes.RangeSlider__Background}></div>
-            <div className={classes.RangeSlider__BackgroundFull} style={backFullStyle} ref={sliderRef}></div>
-        </div>
-    )
-}
-
-export default RangeSlider;
-
-*/

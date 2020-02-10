@@ -8,16 +8,39 @@
         letter-spacing: 2px;
         font-weight: 300;
         font-size: 3rem;
+
+        @media only screen and (max-width: $bp-medium) {
+            display: none;
+        }
     }
 
     &__Slider {
         width: 50%;
         margin: 4rem auto;
+
+        @media only screen and (max-width: $bp-medium) {
+            display: none;
+        }
     }
 
     &__Districts {
         padding: 3rem;
         display: flex;
         flex-direction: column;
+    }
+}
+
+.LoadingContainer {
+    width: 100%;
+    position: relative;
+    height: 15rem;
+
+    &__Text {
+        font-size: $default-font-size;
+        font-weight: 500;
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 }

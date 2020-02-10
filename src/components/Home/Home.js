@@ -18,7 +18,7 @@ const Home = () => {
                 </p>
                 
                 <p>
-                    Front end kısmı React, haritalar için Leaflet kullandım. App'i genişletilebilir bir şekilde dizyan ettim,
+                    Front end kısmı için React, haritalar için Leaflet kullandım. App'i genişletilebilir bir şekilde dizyan ettim,
                     ilerde başka iller ve ilçeler ile başka bankalar ekleyebilirim.
                 </p>
             </div>
