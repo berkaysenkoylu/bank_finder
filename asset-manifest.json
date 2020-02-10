@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/bank_finder/static/css/main.2625c5e9.chunk.css",
+    "main.js": "/bank_finder/static/js/main.d607d58e.chunk.js",
+    "main.js.map": "/bank_finder/static/js/main.d607d58e.chunk.js.map",
+    "runtime-main.js": "/bank_finder/static/js/runtime-main.6dda7252.js",
+    "runtime-main.js.map": "/bank_finder/static/js/runtime-main.6dda7252.js.map",
+    "static/js/2.4e373250.chunk.js": "/bank_finder/static/js/2.4e373250.chunk.js",
+    "static/js/2.4e373250.chunk.js.map": "/bank_finder/static/js/2.4e373250.chunk.js.map",
+    "index.html": "/bank_finder/index.html",
+    "precache-manifest.81d9278a1676e1d470fd942d7dd768b9.js": "/bank_finder/precache-manifest.81d9278a1676e1d470fd942d7dd768b9.js",
+    "service-worker.js": "/bank_finder/service-worker.js",
+    "static/css/main.2625c5e9.chunk.css.map": "/bank_finder/static/css/main.2625c5e9.chunk.css.map",
+    "static/js/2.4e373250.chunk.js.LICENSE.txt": "/bank_finder/static/js/2.4e373250.chunk.js.LICENSE.txt",
+    "static/media/ankara.jpg": "/bank_finder/static/media/ankara.08eb0026.jpg",
+    "static/media/bank.jpg": "/bank_finder/static/media/bank.23bf3d5b.jpg",
+    "static/media/compass2.svg": "/bank_finder/static/media/compass2.49ff0845.svg",
+    "static/media/info.svg": "/bank_finder/static/media/info.4b5ad54a.svg",
+    "static/media/library.svg": "/bank_finder/static/media/library.25ae6141.svg",
+    "static/media/location.svg": "/bank_finder/static/media/location.1fa7b979.svg",
+    "static/media/location1.svg": "/bank_finder/static/media/location1.b2089243.svg",
+    "static/media/map.svg": "/bank_finder/static/media/map.6df50ac4.svg",
+    "static/media/navigation.jpg": "/bank_finder/static/media/navigation.c083af38.jpg",
+    "static/media/office.svg": "/bank_finder/static/media/office.00936e99.svg",
+    "static/media/search.svg": "/bank_finder/static/media/search.9afe8eb1.svg",
+    "static/media/sprites.svg": "/bank_finder/static/media/sprites.d5803357.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6dda7252.js",
+    "static/js/2.4e373250.chunk.js",
+    "static/css/main.2625c5e9.chunk.css",
+    "static/js/main.d607d58e.chunk.js"
+  ]
+}
